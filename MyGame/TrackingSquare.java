@@ -14,6 +14,17 @@ public class TrackingSquare extends Squares
      */
     public void act() 
     {
-        // Add your action code here.
+        followTheCircle();
     }    
+    public void followTheCircle()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        
+            if (mouse != null)
+        {
+            turnTowards(mouse.getX(), mouse.getY());
+            move(3);
+        }
+    }
 }
+

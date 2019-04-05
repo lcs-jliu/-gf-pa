@@ -14,6 +14,21 @@ public class Circle extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+        followTheMouse();
+    }   
+    
+       private void followTheMouse()
+    {
+        // Get info about the mouse
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+
+        
+        if (mouse != null)
+        {
+            turnTowards(mouse.getX(), mouse.getY());
+            move(10);
+        }
+        
+}
+
 }
