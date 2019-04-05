@@ -13,7 +13,7 @@ public class Reflexes extends World
     private boolean gameOn;
     private int frames;
     private int timeSurvived;
-    private int lives;
+    public int lives;
 
     /**
      *
@@ -158,4 +158,5 @@ public class Reflexes extends World
         Circle circle = new Circle();
         addObject(circle, 500,500);
     }
+    
 }

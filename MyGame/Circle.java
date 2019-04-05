@@ -15,6 +15,7 @@ public class Circle extends Actor
     public void act() 
     {
         followTheMouse();
+        removeSquare();
     }   
     
        private void followTheMouse()
@@ -29,6 +30,15 @@ public class Circle extends Actor
             move(10);
         }
         
-}
-
+    }
+    
+    public void removeSquare()
+    {
+        if (isTouching(Squares.class))
+        {
+            removeTouching(Squares.class);
+            //Reflexes.lives = Reflexes.lives - 1;
+        }    
+        
+    }
 }

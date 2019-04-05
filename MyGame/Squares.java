@@ -14,6 +14,15 @@ public class Squares extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        removeSquare();
     }    
+    
+    public void removeSquare()
+    {
+        if (isTouching(Circle.class))
+        {
+            removeTouching(Squares.class);
+        }    
+        
+    }
 }
