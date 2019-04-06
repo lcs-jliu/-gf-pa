@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Squares here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Jason Liu
+ * Saturday,April 6 2019
  */
 public class Squares extends Actor
 {

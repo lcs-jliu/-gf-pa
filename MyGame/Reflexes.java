@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Reflexes here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Jason Liu
+ * Saturday,April 6 2019
  */
 
 public class Reflexes extends World
@@ -13,8 +13,9 @@ public class Reflexes extends World
     private boolean gameOn;
     private int frames;
     private int timeSurvived;
-    public int lives;
-
+    public int lives = 3;
+    
+    
     /**
      *
      * Set up the world
@@ -25,7 +26,7 @@ public class Reflexes extends World
         // Game starts showing hint about how to play
         showingInstruction = true;
         gameOn = false;
-        lives = 3;
+
     }
 
     /**
@@ -38,7 +39,7 @@ public class Reflexes extends World
             showInstruction();
             lookForGameStart();
         }
-            else if (gameOn)
+        else if (gameOn)
         {
             trackTime();
             lookToAddTarget();
@@ -79,7 +80,7 @@ public class Reflexes extends World
             startGame();
         }
     }
-    
+
     private void startGame()
     {
         gameOn = true;
@@ -89,18 +90,18 @@ public class Reflexes extends World
         showLives();
         addCircle();
     }
-    
+
     private void showTimeSurvived()
     {
         showText("Time Survived:" + timeSurvived,100,50);
     }
     
-    private void showLives()
+    public void showLives()
     {
-         showText("Lives:" + lives,100,100);
+        showText("Lives:" + lives,100,100);
     }
-    
-    private void trackTime()
+
+    public void trackTime()
     {
         // Track frames (fps is about 60)
         frames += 1;
@@ -111,8 +112,8 @@ public class Reflexes extends World
             timeSurvived += 1;
             showTimeSurvived();
         }
-        
-        if(lives == 0)
+
+            if(lives == 0)
         {
             gameOn = false;
             showText("Game Over",500,250);
@@ -121,8 +122,8 @@ public class Reflexes extends World
             showText("",100,100);
         }
     }
-    
-        private void lookToAddTarget()
+
+    private void lookToAddTarget()
     {
         // Add a new target roughly every half second
         if (frames % 120 == 0)
@@ -130,7 +131,7 @@ public class Reflexes extends World
             addSquare();
         }
     }
-    
+
     private void addSquare()
     {
         // Pick a random x position within the width of this world
@@ -152,11 +153,16 @@ public class Reflexes extends World
         }
 
     }
-    
+
     private void addCircle()
     {
         Circle circle = new Circle();
         addObject(circle, 500,500);
     }
     
+    public void decreaseLives()
+    {
+        lives = lives - 1;
+    }
+
 }

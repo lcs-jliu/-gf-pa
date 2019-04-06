@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class TrackingSquare here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Jason Liu 
+ * Saturday,April 6 2019
  */
 public class TrackingSquare extends Squares
 {
@@ -16,11 +16,12 @@ public class TrackingSquare extends Squares
     {
         followTheCircle();
     }    
+
     public void followTheCircle()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        
-            if (mouse != null)
+
+        if (mouse != null)
         {
             turnTowards(mouse.getX(), mouse.getY());
             move(3);

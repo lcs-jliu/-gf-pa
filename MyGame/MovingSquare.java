@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MovingSquare here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Jason Liu
+ * Saturday,April 6 2019
  */
 public class MovingSquare extends Squares
 {
@@ -16,22 +16,22 @@ public class MovingSquare extends Squares
     {
         //CTRL-Space
         move(5);
-        
+
         //Turn when at edge
         if (isAtEdge())
         {
             randomTurn();
         }
-        
+
         //Turn when toughing any other objects
         if (isTouching(MovingSquare.class))
         {
             randomTurn();
         }
-        
+
     }
-    
+
     public void randomTurn() {
-           turn(Greenfoot.getRandomNumber(359));
+        turn(Greenfoot.getRandomNumber(359));
     }  
 }
